@@ -6,3 +6,7 @@
 >3. Hoàng Mạnh Dũng
 >4. Vũ Đình Thiết
 >5. Lê Quốc Trung
+
+## RUN
+cd Text_To_Music/web
+CUDA_VISIBLE_DIVICES=1 python manage.py runserver 0.0.0.0:11001
