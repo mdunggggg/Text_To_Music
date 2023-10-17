@@ -5,4 +5,4 @@
 >2. Nguyễn Anh Đức
 >3. Hoàng Mạnh Dũng
 >4. Vũ Đình Thiết
->5. Nguyễn Quốc Trung
+>5. Lê Quốc Trung
