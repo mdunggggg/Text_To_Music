@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Text to Music</title>
+    <title>Text to music</title>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" r
             rel="stylesheet"
@@ -14,106 +14,66 @@
     <link rel="icon" href="{% static 'proptit.ico' %}">
     <link rel="stylesheet" href="{% static 'index.css' %}">
     <style>
-        body {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            width: 100vw;
-            height: 100vh;
-            background-image: url("https://tuna.voicemod.net/_nuxt/img/background.4f36a4b.png");
-            font-family: sans-serif;
-        }
-
-        .container {
-            padding: 1rem;
-            font-family: inherit;
-            color: #FBFBFB;
-            background-color: #1e2023;
-            margin: 20vh auto;
-            border-radius: 1em;
-            width: 70vw;
-        }
-
         h1 {
-            background: #bebaba;
+            background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 2em;
-            font-family: sans-serif;
-            font-size: 2rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #c9d6ff, #e2e2e2);
         }
 
         .btn_enter {
-            background: linear-gradient(to right, #1c92d2, #6cddf1);
-            color: #181818;
+            background: linear-gradient(to right, #1c92d2, #f2fcfe);
+            color: #000000;
         }
 
         .btn_enter:hover {
-            background: linear-gradient(to left, #1c92d2, #88ddf3);
-            color: #837070;
+            background: linear-gradient(to left, #1c92d2, #f2fcfe);
         }
 
-        .div-cont {
-            position: relative;
-        }
-
-        .div-cont label {
-            position: absolute;
-            color: #1e2023;
-            font-size: 1.5rem;
-            transition: 0.5s;
-        }
-
-        .div-cont:hover label, .div-cont:focus label, .div-cont:focus-within label {
-            color: #8994fc;
-            top: -2em;
-        }
     </style>
 <body style="text-align:center"></body>
 </head>
 <body>
-    <div class="container">
-        <h1>Text To Music</h1>
-        <div class="mb-3">
-            <div class="div-cont form-floating">
-                <textarea class="form-control" id="desc-textarea"
-                          style="height: 100px; background-color: #e7e7e7; color: #1e2023"></textarea>
-                <label for="desc-textarea">Description</label>
-            </div>
-            <p></p>
-            {% csrf_token %}
-            <center>
-                <button style="width: 25% ; border-radius: 20px;font-size: 20px; font-weight: initial"
-                        type="button" class="btn btn-outline-primary btn_enter"
-                        id="enter-btn"> Generate
-                </button>
-            </center>
-            <p></p>
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status" style="display: none;" id="spinner">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-            <center>
-                <img class="img-fluid mx-auto"
-                     src="{{ image_url }}" alt="Logo ProPTIT"
-                     id="image-display"
-                     style="width: 200px; height: 200px; border-radius: 80%;
-                            object-fit: cover;"
-                >
-            </center>
-            <p></p>
-            <audio controls id="audio-control" style="background-color: #bebaba">
-                <source src="{{ audio_url }}" id="audio-display">
-            </audio>
-
+<div class="container">
+    <h1>Text To VietNamese Music</h1>
+    <div class="mb-3">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Mô Tả Bài Hát Của Bạn Tại Đây" id="desc-textarea"
+                      style="height: 100px"></textarea>
+            <label for="desc-textarea">Description</label>
         </div>
-    </div>
+        <p></p>
+        {% csrf_token %}
+        <center>
+            <button style="width: 15% ; border-radius: 20px 20px 20px 20px;font-size: 20px"
+                    type="button" class="btn btn-outline-primary btn_enter"
+                    id="enter-btn">Enter
+            </button>
+        </center>
+        <p></p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status" style="display: none;" id="spinner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCpMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-            crossorigin="anonymous"></script>
-    <script src="{% static 'index.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <p></p>
+        <audio controls id="audio-control">
+            <source src="{{ audio_url }}" id="audio-display">
+        </audio>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCpMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+<script src="{% static 'index.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
